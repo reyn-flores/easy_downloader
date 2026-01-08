@@ -29,25 +29,27 @@ class MyApp extends StatelessWidget {
 class DownloadExamplePage extends StatelessWidget {
   const DownloadExamplePage({super.key});
 
-  // Sample files for testing downloads
+  /// Sample files for testing downloads
+  /// https://sample-files.com/documents/pdf/
   static const _sampleFiles = [
     _SampleFile(
       name: 'Sample PDF',
-      url: 'https://www.w3.org/WAI/WCAG21/Techniques/pdf/img/table-word.pdf',
+      url: 'https://sample-files.com/downloads/documents/pdf/sample-report.pdf',
       filename: 'sample_document.pdf',
       fileType: FileType.pdf,
       icon: Icons.picture_as_pdf,
     ),
     _SampleFile(
       name: 'Sample Image',
-      url: 'https://picsum.photos/1920/1080',
+      url:
+          'https://sample-files.com/downloads/images/jpg/color_test_800x600_118kb.jpg',
       filename: 'sample_image.jpg',
       fileType: FileType.image,
       icon: Icons.image,
     ),
     _SampleFile(
       name: 'Sample Text',
-      url: 'https://www.w3.org/TR/PNG/iso_8859-1.txt',
+      url: 'https://sample-files.com/downloads/documents/txt/simple.txt',
       filename: 'sample_text.txt',
       fileType: FileType.document,
       icon: Icons.description,
