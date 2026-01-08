@@ -36,13 +36,9 @@ class DownloaderState extends Equatable {
 
   /// Get the current download (the one being processed)
   DownloadTask? get currentDownload {
-    try {
-      return downloadTasks.firstWhere(
-        (d) => d.status == DownloadStatus.downloading,
-      );
-    } on Exception catch (_) {
-      return null;
-    }
+    return downloadTasks
+        .where((d) => d.status == DownloadStatus.downloading)
+        .firstOrNull;
   }
 
   @override
