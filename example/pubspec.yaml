@@ -8,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  easy_downloader:
+  easy_flutter_downloader:
     path: ../
   dio: ^5.9.0
   flutter_bloc: ^9.1.1

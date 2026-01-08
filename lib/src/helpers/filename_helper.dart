@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:easy_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/enums/file_type.dart';
 import 'package:uuid/uuid.dart';
 
 /// Helper class for preparing filenames for downloads.

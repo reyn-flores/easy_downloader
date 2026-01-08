@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:easy_downloader/easy_downloader.dart';
+import 'package:easy_flutter_downloader/easy_flutter_downloader.dart';
 import 'package:test/test.dart';
 
 void main() {

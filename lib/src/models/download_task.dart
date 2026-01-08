@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:easy_downloader/src/enums/download_status.dart';
-import 'package:easy_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/enums/download_status.dart';
+import 'package:easy_flutter_downloader/src/enums/file_type.dart';
 import 'package:equatable/equatable.dart';
 
 /// Represents a single download task with its state.

@@ -1,4 +1,4 @@
-name: easy_downloader
+name: easy_flutter_downloader
 description: "Easy-to-use Flutter download manager with platform-aware file saving."
 version: 0.0.1
 homepage: https://github.com/reyn-flores/easy_downloader

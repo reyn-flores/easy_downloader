@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:easy_downloader/easy_downloader.dart';
+import 'package:easy_flutter_downloader/easy_flutter_downloader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,6 +31,7 @@ class DownloadExamplePage extends StatelessWidget {
 
   /// Sample files for testing downloads
   /// https://sample-files.com/documents/pdf/
+  /// Note: Open the files in a browser to verify they are accessible.
   static const _sampleFiles = [
     _SampleFile(
       name: 'Sample PDF',

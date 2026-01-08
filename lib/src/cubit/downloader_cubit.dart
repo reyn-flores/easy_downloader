@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:dio/dio.dart';
-import 'package:easy_downloader/src/enums/download_status.dart';
-import 'package:easy_downloader/src/enums/file_type.dart';
-import 'package:easy_downloader/src/helpers/file_saver.dart';
-import 'package:easy_downloader/src/helpers/filename_helper.dart';
-import 'package:easy_downloader/src/models/download_task.dart';
+import 'package:easy_flutter_downloader/src/enums/download_status.dart';
+import 'package:easy_flutter_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/helpers/file_saver.dart';
+import 'package:easy_flutter_downloader/src/helpers/filename_helper.dart';
+import 'package:easy_flutter_downloader/src/models/download_task.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';

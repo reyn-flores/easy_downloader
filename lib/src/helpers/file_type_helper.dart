@@ -1,4 +1,4 @@
-import 'package:easy_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/enums/file_type.dart';
 
 /// Extension to convert from file extension to [FileType].
 extension FileTypeFromExtension on String {

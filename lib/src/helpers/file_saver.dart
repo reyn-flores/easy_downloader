@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:downloadsfolder/downloadsfolder.dart' as downloadsfolder;
-import 'package:easy_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/enums/file_type.dart';
 import 'package:gal/gal.dart';
 import 'package:path_provider/path_provider.dart';
 
