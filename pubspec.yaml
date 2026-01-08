@@ -1,7 +1,8 @@
 name: easy_downloader
 description: "Easy-to-use Flutter download manager with platform-aware file saving."
 version: 0.0.1
-homepage:
+homepage: https://github.com/reyn-flores/easy_downloader
+repository: https://github.com/reyn-flores/easy_downloader
 
 environment:
   sdk: ^3.10.1

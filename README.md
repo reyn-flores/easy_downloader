@@ -184,7 +184,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ### Issues
 
-If you encounter any issues, please file them on the [issue tracker](https://github.com/YOUR_USERNAME/easy_downloader/issues).
+If you encounter any issues, please file them on the [issue tracker](https://github.com/reyn-flores/easy_downloader/issues).
 
 ## License
 
