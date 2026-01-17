@@ -4,6 +4,13 @@ version: 0.0.1
 homepage: https://github.com/reyn-flores/easy_downloader
 repository: https://github.com/reyn-flores/easy_downloader
 
+topics:
+  - downloader
+  - download-manager
+  - file-download
+  - dio
+  - flutter
+
 environment:
   sdk: ^3.10.1
   flutter: ">=1.17.0"
