@@ -20,3 +20,9 @@ All notable changes to this project will be documented in this file.
 - Collective progress tracking by tag
 - Support for GET and POST download requests
 - Automatic temporary file cleanup after successful downloads
+
+## 1.0.2
+
+### Added
+
+- Created a Progress class for refined progress details ie: progress text, speed, time remaining 
