@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:easy_flutter_downloader/src/enums/download_status.dart';
 import 'package:easy_flutter_downloader/src/enums/file_type.dart';
+import 'package:easy_flutter_downloader/src/models/progress.dart';
 import 'package:equatable/equatable.dart';
 
 /// Represents a single download task with its state.
@@ -11,6 +12,7 @@ class DownloadTask extends Equatable {
     required this.filename,
     required this.fileType,
     required this.cancelToken,
+    required this.progressData,
     this.postData,
     this.tag,
     this.status = DownloadStatus.queued,
@@ -46,12 +48,15 @@ class DownloadTask extends Equatable {
   final DownloadStatus status;
 
   /// Download progress (0.0 to 1.0)
+  @Deprecated('Use progressData instead')
   final double progress;
 
   /// Bytes received so far
+  @Deprecated('Use progressData instead')
   final int receivedBytes;
 
   /// Total bytes to download
+  @Deprecated('Use progressData instead')
   final int totalBytes;
 
   /// Error message if download failed
@@ -59,6 +64,9 @@ class DownloadTask extends Equatable {
 
   /// Path where the file was saved (available after completion)
   final String? savedPath;
+
+  /// Progress data for this download task
+  final Progress progressData;
 
   /// Returns true if download is in a terminal state
   bool get isTerminal =>
@@ -71,6 +79,7 @@ class DownloadTask extends Equatable {
       status == DownloadStatus.queued || status == DownloadStatus.downloading;
 
   /// Returns formatted progress text
+  @Deprecated('Use progressData instead')
   String get progressText {
     switch (status) {
       case DownloadStatus.queued:
@@ -114,6 +123,7 @@ class DownloadTask extends Equatable {
     int? totalBytes,
     String? error,
     String? savedPath,
+    Progress? progressData,
   }) {
     return DownloadTask(
       id: id ?? this.id,
@@ -129,6 +139,7 @@ class DownloadTask extends Equatable {
       totalBytes: totalBytes ?? this.totalBytes,
       error: error ?? this.error,
       savedPath: savedPath ?? this.savedPath,
+      progressData: progressData ?? this.progressData,
     );
   }
 
@@ -146,5 +157,6 @@ class DownloadTask extends Equatable {
     totalBytes,
     error,
     savedPath,
+    progressData,
   ];
 }

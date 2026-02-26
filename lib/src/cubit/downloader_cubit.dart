@@ -7,6 +7,7 @@ import 'package:easy_flutter_downloader/src/enums/file_type.dart';
 import 'package:easy_flutter_downloader/src/helpers/file_saver.dart';
 import 'package:easy_flutter_downloader/src/helpers/filename_helper.dart';
 import 'package:easy_flutter_downloader/src/models/download_task.dart';
+import 'package:easy_flutter_downloader/src/models/progress.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:uuid/uuid.dart';
@@ -87,6 +88,7 @@ class DownloaderCubit extends Cubit<DownloaderState> {
       postData: postData,
       tag: tag,
       cancelToken: CancelToken(),
+      progressData: const Progress(),
     );
 
     // Add to state
@@ -130,6 +132,7 @@ class DownloaderCubit extends Cubit<DownloaderState> {
       _updateTask(task.id, status: DownloadStatus.downloading);
 
       // Perform the download
+      final startTime = DateTime.now();
       await _dio.download(
         task.url,
         tempPath,
@@ -146,6 +149,11 @@ class DownloaderCubit extends Cubit<DownloaderState> {
               progress: progress,
               receivedBytes: received,
               totalBytes: total,
+              progressData: Progress(
+                transfer: received,
+                total: total,
+                elapsed: DateTime.now().difference(startTime),
+              ),
             );
           }
         },
@@ -193,6 +201,7 @@ class DownloaderCubit extends Cubit<DownloaderState> {
     int? totalBytes,
     String? error,
     String? savedPath,
+    Progress? progressData,
   }) {
     final tasks = [...state.downloadTasks];
     final taskIndex = tasks.indexWhere((t) => t.id == taskId);
@@ -205,6 +214,7 @@ class DownloaderCubit extends Cubit<DownloaderState> {
         totalBytes: totalBytes ?? tasks[taskIndex].totalBytes,
         error: error,
         savedPath: savedPath,
+        progressData: progressData ?? tasks[taskIndex].progressData,
       );
       _safeEmit(state.copyWith(downloadTasks: tasks));
     }

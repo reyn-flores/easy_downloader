@@ -42,8 +42,7 @@ class DownloadExamplePage extends StatelessWidget {
     ),
     _SampleFile(
       name: 'Sample Image',
-      url:
-          'https://sample-files.com/downloads/images/jpg/color_test_800x600_118kb.jpg',
+      url: 'https://picsum.photos/id/237/200/300',
       filename: 'sample_image.jpg',
       fileType: FileType.image,
       icon: Icons.image,
@@ -195,9 +194,17 @@ class DownloadTaskTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 4),
-                      Text(
-                        task.progressText,
-                        style: Theme.of(context).textTheme.bodySmall,
+                      Row(
+                        children: [
+                          Text(
+                            task.progressData.progressText,
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                          Text(
+                            task.progressData.timeRemaining,
+                            style: Theme.of(context).textTheme.bodySmall,
+                          ),
+                        ],
                       ),
                     ],
                   ),

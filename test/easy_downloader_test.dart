@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:easy_flutter_downloader/easy_flutter_downloader.dart';
+import 'package:easy_flutter_downloader/src/models/progress.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -13,6 +14,7 @@ void main() {
         filename: 'test.pdf',
         fileType: FileType.pdf,
         cancelToken: CancelToken(),
+        progressData: const Progress(),
       );
     });
 
@@ -165,6 +167,7 @@ void main() {
           fileType: FileType.pdf,
           cancelToken: CancelToken(),
           tag: 'tag1',
+          progressData: const Progress(),
         ),
         DownloadTask(
           id: '2',
@@ -174,6 +177,7 @@ void main() {
           cancelToken: CancelToken(),
           status: DownloadStatus.downloading,
           tag: 'tag1',
+          progressData: const Progress(),
         ),
         DownloadTask(
           id: '3',
@@ -183,6 +187,7 @@ void main() {
           cancelToken: CancelToken(),
           status: DownloadStatus.completed,
           tag: 'tag2',
+          progressData: const Progress(),
         ),
         DownloadTask(
           id: '4',
@@ -191,6 +196,7 @@ void main() {
           fileType: FileType.document,
           cancelToken: CancelToken(),
           status: DownloadStatus.failed,
+          progressData: const Progress(),
         ),
       ];
     });
@@ -249,6 +255,7 @@ void main() {
             fileType: FileType.pdf,
             cancelToken: CancelToken(),
             status: DownloadStatus.completed,
+            progressData: const Progress(),
           ),
         ],
       );
